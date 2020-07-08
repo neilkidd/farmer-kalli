@@ -16,7 +16,12 @@ function App(props) {
 
   const Calculate = (sacksOfCorn) =>{
     const costPerTrip = 0.25;
-    const totalCost = (parseInt(sacksOfCorn)+1) * costPerTrip;
+    let numberOfTrips = parseInt(sacksOfCorn) + 1;
+    if(isNaN(numberOfTrips)){
+      numberOfTrips = 0;
+    }
+    
+    const totalCost = (numberOfTrips) * costPerTrip;
 
     setTotalCost(totalCost);
   }

@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
+import Calculator from './components/Calculator';
 import './App.css';
 
 function App(props) {
 
+  const [sacksOfCorn, setSacksOfCorn] = useState(0);
   const [totalCost, setTotalCost] = useState(0);
   
   const formatter = new Intl.NumberFormat('en-GB', {
@@ -10,13 +12,14 @@ function App(props) {
     currency: 'GBP'
   });
 
-  const handleSubmit = (event) =>{
-    event.preventDefault();
-  };
 
-  const Calculate = (sacksOfCorn) =>{
+  const handleCalculate = (event) =>{
+    event.preventDefault();
+    
+    console.log(event);
+
     const costPerTrip = 0.25;
-    let numberOfTrips = parseInt(sacksOfCorn) + 1;
+    let numberOfTrips = parseInt(sacksOfCorn);
     if(isNaN(numberOfTrips)){
       numberOfTrips = 0;
     }
@@ -24,15 +27,13 @@ function App(props) {
     const totalCost = (numberOfTrips) * costPerTrip;
 
     setTotalCost(totalCost);
+
+    console.log(totalCost);
   }
 
   return (
-    <div className="App" onSubmit={handleSubmit}>
-      <form name='calculator'>
-       Number of bags: <input type='number' min="0" max="1000" name='bags' value={props.sacksOfCorn} onChange={(e) => Calculate(e.target.value)}/>
-        
-        
-      </form>
+    <div className="App">
+      <Calculator handleCalculate={handleCalculate} sacksOfCorn={sacksOfCorn} setSacksOfCorn={setSacksOfCorn}/>
       <div>
         Total Cost: {formatter.format(totalCost)}
       </div>

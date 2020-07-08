@@ -11,39 +11,12 @@ test.each`
     expect(calculateCost(input)).toBe(expectedResult)
   })
 
-
-  test('0 geese and 0 bags of corn', () => {
-    const geese = 0;
-    const bagsOfCorn = 0;
-    const expectedResult = [];
-
-    expect(calculateTrips(geese, bagsOfCorn))
-    .toEqual(expect.arrayContaining(expectedResult));
-  });
-
-  test('1 goose and 0 bags of corn', () => {
-    const geese = 1;
-    const bagsOfCorn = 0;
-    const expectedResult = ['Goose'];
-
-    expect(calculateTrips(geese, bagsOfCorn))
-    .toEqual(expect.arrayContaining(expectedResult));
-  });
-
-  test('1 goose and 1 bag of corn', () => {
-    const geese = 1;
-    const bagsOfCorn = 1;
-    const expectedResult = ['Goose', 'Return', 'Corn'];
-
-    expect(calculateTrips(geese, bagsOfCorn))
-    .toEqual(expect.arrayContaining(expectedResult));
-  });
-
-  test('1 goose and 2 bags of corn', () => {
-    const geese = 1;
-    const bagsOfCorn = 2;
-    const expectedResult = ['Goose', 'Return', 'Corn', 'Return', 'Corn'];
-
-    expect(calculateTrips(geese, bagsOfCorn))
-    .toEqual(expect.arrayContaining(expectedResult));
-  });
+test.each`
+  geese | corn | expectedResult
+  ${0}  | ${0} | ${[]}
+  ${1}  | ${0} | ${['Goose']}
+  ${1}  | ${1} | ${['Goose', 'Return', 'Corn']}
+  ${1}  | ${2} | ${['Goose', 'Return', 'Corn', 'Return', 'Corn']}
+  `('$geese geese + $corn bags of corn has trips $expectedResult', ({ geese, corn, expectedResult }) => {
+    expect(calculateTrips(geese, corn)).toEqual(expect.arrayContaining(expectedResult));
+  })

@@ -17,6 +17,9 @@ test.each`
   ${1}  | ${0} | ${['Goose']}
   ${1}  | ${1} | ${['Goose', 'Return', 'Corn']}
   ${1}  | ${2} | ${['Goose', 'Return', 'Corn', 'Return', 'Corn']}
+  ${3}  | ${0} | ${['Goose', 'Return', 'Goose', 'Return', 'Goose']}
   `('$geese geese + $corn bags of corn has trips $expectedResult', ({ geese, corn, expectedResult }) => {
     expect(calculateTrips(geese, corn)).toEqual(expect.arrayContaining(expectedResult));
   })
+
+

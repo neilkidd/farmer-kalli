@@ -10,10 +10,10 @@ test('One bag cost 0.25', () => {
     expect(cost).toBe(0.25);
 });
 
-test('Two bags cost 0.50', () => {
+test('Two bags cost 0.75', () => {
     const cost = calculateCost(2);
 
-    expect(cost).toBe(0.50);
+    expect(cost).toBe(0.75);
 });
 
 function calculateCost(bags){
@@ -21,7 +21,7 @@ function calculateCost(bags){
         return 0;
     }
     else if(bags === 2){
-        return 0.50;
+        return 0.75;
     }
    return 0.25;
 }

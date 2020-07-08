@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a399c03cc3c70402d71f641db49e0423",
+    "revision": "58233c43d0b2e3c796aa4e332d15f02f",
     "url": "/farmer-kalli/index.html"
   },
   {
-    "revision": "22e9da0d56c3b6713506",
+    "revision": "221aefde458065e46676",
     "url": "/farmer-kalli/static/css/main.5f361e03.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/farmer-kalli/static/js/2.31a37788.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "22e9da0d56c3b6713506",
-    "url": "/farmer-kalli/static/js/main.c7259603.chunk.js"
+    "revision": "221aefde458065e46676",
+    "url": "/farmer-kalli/static/js/main.85e909e3.chunk.js"
   },
   {
     "revision": "a30551ceeaca47ecaa58",

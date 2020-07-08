@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import Calculator from './components/Calculator';
 import './App.css';
+import { calculateCost } from './TripCalculator';
 
-function App() {
+function App(props) {
+
+  const [sacksOfCorn, setSacksOfCorn] = useState(0);
+  const [totalCost, setTotalCost] = useState(0);
+  
+  const formatter = new Intl.NumberFormat('en-GB', {
+    style: 'currency',
+    currency: 'GBP'
+  });
+
+
+  const handleCalculate = (event) =>{
+    event.preventDefault();
+    const result = calculateCost(parseInt(sacksOfCorn));
+    setTotalCost(result);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Calculator handleCalculate={handleCalculate} sacksOfCorn={sacksOfCorn} setSacksOfCorn={setSacksOfCorn}/>
+      <div>
+        Total Cost: {formatter.format(totalCost)}
+      </div>
     </div>
   );
 }

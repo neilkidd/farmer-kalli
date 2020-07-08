@@ -14,16 +14,17 @@ export function calculateTrips(geese, bagsOfCorn){
     
     let result = [];
 
-    if(geese > 0){
+    for(let gooseCount = 0; gooseCount < geese; gooseCount ++){
         result.push('Goose');
-
-        for(let gooseCount = 0; gooseCount < geese; gooseCount ++){
-            result.push('Goose');
+        if(bagsOfCorn === 0 && gooseCount + 1 < geese){
             result.push('Return');
         }
     }
+
     for(let cornCount = 0; cornCount < bagsOfCorn; cornCount ++){
-        result.push('Return');
+        if(result.length > 0){
+            result.push('Return');
+        }
         result.push('Corn');
     }
     

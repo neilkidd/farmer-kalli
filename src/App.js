@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Calculator from './components/Calculator';
 import './App.css';
+import calculateCost from './TripCalculator';
 
 function App(props) {
 
@@ -15,20 +16,8 @@ function App(props) {
 
   const handleCalculate = (event) =>{
     event.preventDefault();
-    
-    console.log(event);
-
-    const costPerTrip = 0.25;
-    let numberOfTrips = parseInt(sacksOfCorn);
-    if(isNaN(numberOfTrips)){
-      numberOfTrips = 0;
-    }
-    
-    const totalCost = (numberOfTrips) * costPerTrip;
-
-    setTotalCost(totalCost);
-
-    console.log(totalCost);
+    const result = calculateCost(parseInt(sacksOfCorn));
+    setTotalCost(result);
   }
 
   return (

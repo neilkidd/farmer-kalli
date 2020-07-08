@@ -1,4 +1,4 @@
-import calculateCost from './TripCalculator'
+import {calculateCost, calculateTrips} from './TripCalculator'
 
 test.each`
     input | expectedResult
@@ -10,3 +10,13 @@ test.each`
   `('$input Bags of corn(s) costs $expectedResult', ({ input, expectedResult }) => {
     expect(calculateCost(input)).toBe(expectedResult)
   })
+
+
+  test('1 goose and 2 bags of corn', () => {
+    const geese = 2;
+    const bagsOfCorn = 1;
+    const expectedResult = ['Goose'];
+
+    expect(calculateTrips(geese, bagsOfCorn))
+    .toEqual(expect.arrayContaining(expectedResult));
+  });

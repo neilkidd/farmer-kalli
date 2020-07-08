@@ -1,5 +1,5 @@
 
-export default function calculateCost(bags){
+export function calculateCost(bags){
     if(bags === 1){
         return 0.25;
     } else if( bags > 0){
@@ -8,4 +8,8 @@ export default function calculateCost(bags){
     }
 
     return 0; 
+}
+
+export function calculateTrips(geese, bagsOfCorn){
+    return ['Goose'];
 }

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Calculator from './components/Calculator';
 import './App.css';
-import calculateCost from './TripCalculator';
+import { calculateCost } from './TripCalculator';
 
 function App(props) {
 

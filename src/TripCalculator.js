@@ -11,5 +11,9 @@ export function calculateCost(bags){
 }
 
 export function calculateTrips(geese, bagsOfCorn){
+    
+    if(geese === 1 && bagsOfCorn === 1){
+        return ['Goose', 'Return', 'Corn'];
+    }
     return ['Goose'];
 }

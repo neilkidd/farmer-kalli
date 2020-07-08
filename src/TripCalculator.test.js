@@ -12,10 +12,19 @@ test.each`
   })
 
 
-  test('1 goose and 2 bags of corn', () => {
-    const geese = 2;
-    const bagsOfCorn = 1;
+  test('1 goose and 0 bags of corn', () => {
+    const geese = 1;
+    const bagsOfCorn = 0;
     const expectedResult = ['Goose'];
+
+    expect(calculateTrips(geese, bagsOfCorn))
+    .toEqual(expect.arrayContaining(expectedResult));
+  });
+
+  test('1 goose and 1 bag of corn', () => {
+    const geese = 1;
+    const bagsOfCorn = 1;
+    const expectedResult = ['Goose', 'Return', 'Corn'];
 
     expect(calculateTrips(geese, bagsOfCorn))
     .toEqual(expect.arrayContaining(expectedResult));

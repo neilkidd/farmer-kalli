@@ -10,7 +10,10 @@ function App(props) {
   };
 
   const Calculate = (bags) =>{
-    setTotalCost(bags * 25);
+    const costPerBag = 25;
+    const totalCost = bags * costPerBag;
+    
+    setTotalCost(totalCost);
   }
 
   return (

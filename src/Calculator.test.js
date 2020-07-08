@@ -4,6 +4,7 @@ test.each`
     ${1}  | ${0.25}
     ${2}  | ${0.75}
     ${3}  | ${1.25}
+    ${10} | ${2.75}
   `('$input Bags of corns costs $expectedResult', ({ input, expectedResult }) => {
     expect(calculateCost(input)).toBe(expectedResult)
   })

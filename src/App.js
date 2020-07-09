@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Calculator from './components/Calculator';
 import './App.css';
-import { calculateCost, calculateTrips } from './TripCalculator';
+import { calculateTrips } from './TripCalculator';
 
 function App(props) {
 
@@ -19,9 +19,7 @@ function App(props) {
     event.preventDefault();
 
     const result = calculateTrips(numberOfGeese, sacksOfCorn);
-    // []
 
-    //const result = calculateCost(parseInt(sacksOfCorn));
     setTotalCost(result.length * 0.25);
   }
 

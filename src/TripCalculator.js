@@ -37,3 +37,9 @@ export function validateRequest(geese, bagsOfCorn){
     }
     return {valid : true};
 }
+
+export function calculatorBuilderFor(validator, tripCalculator){
+    return () => {
+        return { valid: false}
+    };
+}

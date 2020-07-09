@@ -1,4 +1,5 @@
-import {calculateCost, calculateTrips, validateRequest} from './TripCalculator'
+import {calculateCost, calculateTrips, validateRequest, calculatorBuilderFor} from './TripCalculator'
+import Calculator from './components/Calculator';
 
 test.each`
     input | expectedResult
@@ -41,4 +42,15 @@ test.each`
     const corn = 3;
     
     expect(validateRequest(geese,corn).valid).toBe(false);
+  });
+
+  test('FIXME',() => {
+    const validator = () => false;
+    const tripCalculator = () => [];
+
+    const calculator = calculatorBuilderFor(validator, tripCalculator);
+
+    const numberOfGeese = 0;
+    const bagsOfCorn = 0;
+    expect(calculator(numberOfGeese, bagsOfCorn).valid).toBe(false);
   });

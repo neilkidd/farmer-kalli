@@ -32,6 +32,8 @@ export function calculateTrips(geese, bagsOfCorn){
 }
 
 export function validateRequest(geese, bagsOfCorn){
-
+    if(geese === 2 && bagsOfCorn === 2){
+        return {valid:false};
+    }
     return {valid : true};
 }

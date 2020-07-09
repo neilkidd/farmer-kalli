@@ -25,9 +25,13 @@ test.each`
   test('Passes validation',() => {
     const geese = 1;
     const corn = 1;
+
     expect(validateRequest(geese,corn).valid).toBe(true);
   });
 
-//TODO: More than one goose with corn fails
-
-
+  test('Fails validation',() => {
+    const geese = 2;
+    const corn = 2;
+    
+    expect(validateRequest(geese,corn).valid).toBe(false);
+  });

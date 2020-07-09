@@ -32,7 +32,7 @@ export function calculateTrips(geese, bagsOfCorn){
 }
 
 export function validateRequest(geese, bagsOfCorn){
-    if(parseInt(geese) === 2 && parseInt(bagsOfCorn) >= 2){
+    if(parseInt(geese) >= 2 && parseInt(bagsOfCorn) >= 2){
         return {valid:false};
     }
     return {valid : true};

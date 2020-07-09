@@ -44,6 +44,13 @@ test.each`
     expect(validateRequest(geese,corn).valid).toBe(false);
   });
 
+test('Fails validation 3',() => {
+  const geese = 3;
+  const corn = 2;
+
+  expect(validateRequest(geese,corn).valid).toBe(false);
+});
+
   test('FIXME',() => {
 
     let callCount = 0;
@@ -68,7 +75,6 @@ test.each`
     const bagsOfCorn = 10;
 
     const calculator = calculatorBuilderFor(validator.instance, tripCalculator);
-    console.log(validator);
     calculator(numberOfGeese, bagsOfCorn);
 
     validator.verify(numberOfGeese, bagsOfCorn, 1);

@@ -71,3 +71,11 @@ test.each`
   `('$geese geese and $corn corn is not valid', ({geese, corn}) => {
   expect(validateRequest(geese,corn).valid).toBe(false);
 })
+
+
+
+test('returns invalid when geese is NAN',() => {
+  const bagsOfCorn = 0;
+  
+  expect(validateRequest("invalid",bagsOfCorn).valid).toBe(false);
+});

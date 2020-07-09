@@ -32,7 +32,13 @@ export function calculateTrips(geese, bagsOfCorn){
 }
 
 export function validateRequest(geese, bagsOfCorn){
-    if(parseInt(geese) >= 1 && parseInt(bagsOfCorn) >= 2){
+    const numberOfGeese = parseInt(geese);
+
+    if(isNaN(numberOfGeese)){
+        return {valid:false};
+    }
+
+    if(numberOfGeese >= 1 && parseInt(bagsOfCorn) >= 2){
         return {valid:false};
     }
     return {valid : true};

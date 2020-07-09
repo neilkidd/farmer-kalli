@@ -9,6 +9,7 @@ function App(props) {
   const [sacksOfCorn, setSacksOfCorn] = useState(0);
   const [totalCost, setTotalCost] = useState(0);
   const [tripValid, setTripValid] = useState(false);
+  const [trips, setTrips] = useState([]);
 
   const formatter = new Intl.NumberFormat('en-GB', {
     style: 'currency',
@@ -27,6 +28,10 @@ function App(props) {
 
     const result = calculateTrips(numberOfGeese, sacksOfCorn);
 
+    setTrips(result)
+
+    console.log(trips)
+
     setTotalCost(result.length * 0.25);
   }
 
@@ -36,10 +41,14 @@ function App(props) {
       <div>
         Your journey is  {tripValid ? "possible" : "not possible"}
       </div>
-
       <div>
         Total Cost: {tripValid ? formatter.format(totalCost) : 0}
       </div>
+      <ul>
+        {trips.map(t => {
+          return <li>{t}</li>
+        })}
+      </ul>
     </div>
   );
 }

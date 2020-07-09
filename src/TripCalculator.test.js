@@ -73,9 +73,11 @@ test.each`
 })
 
 test.each`
-  geese | corn
-  ${'invalid'}  | ${0}
-  ${0}  | ${undefined}
+  geese        | corn
+  ${'invalid'} | ${0}
+  ${0}         | ${undefined}
+  ${-1}        | ${0}
+  ${0}         | ${-1}
   `('$geese geese and $corn corn is invalid input', ({geese, corn}) => {
   expect(validateRequest(geese,corn).valid).toBe(false);
 })

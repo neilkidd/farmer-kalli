@@ -39,6 +39,10 @@ export function validateRequest(geese, bagsOfCorn){
         return {valid:false};
     }
 
+    if(numberOfGeese < 0 || numberOfCorns < 0){
+        return {valid:false};
+    }
+
     if(numberOfGeese >= 1 && numberOfCorns >= 2){
         return {valid:false};
     }

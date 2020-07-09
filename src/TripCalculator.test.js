@@ -44,18 +44,6 @@ test.each`
     expect(validateRequest(geese,corn).valid).toBe(false);
   });
 
-  // test('Builder produces a validator',() => {
-  //   const validator = () => false;
-  //   const tripCalculator = () => [];
-
-  //   const calculator = calculatorBuilderFor(validator, tripCalculator);
-
-  //   const numberOfGeese = 0;
-  //   const bagsOfCorn = 0;
-
-  //   expect(calculator(numberOfGeese, bagsOfCorn).valid).toBe(false);
-  // });
-
   test('FIXME',() => {
 
     let callCount = 0;

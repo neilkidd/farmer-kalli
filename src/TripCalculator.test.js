@@ -72,15 +72,10 @@ test.each`
   expect(validateRequest(geese,corn).valid).toBe(false);
 })
 
-test('returns invalid when geese is NAN',() => {
-  const bagsOfCorn = 0;
-
-  expect(validateRequest("invalid",bagsOfCorn).valid).toBe(false);
-});
-
-test('returns invalid when bagsOfCorn isNaN',() => {
-  const bagsOfCorn = undefined;
-  const geese = 0;
-
-  expect(validateRequest(geese, bagsOfCorn).valid).toBe(false);
-});
+test.each`
+  geese | corn
+  ${'invalid'}  | ${0}
+  ${0}  | ${undefined}
+  `('$geese geese and $corn corn is invalid input', ({geese, corn}) => {
+  expect(validateRequest(geese,corn).valid).toBe(false);
+})

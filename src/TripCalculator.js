@@ -43,23 +43,27 @@ export function validateRequest(geese, bagsOfCorn){
         return {valid:false};
     }
 
-    if(numberOfGeese === 3 && numberOfCorns === 1){
-        return {valid:false};
+    if(numberOfGeese === 0 && numberOfCorns > 0){
+        return {valid:true};
+    }
+
+    if(numberOfGeese > 0 && numberOfCorns === 0){
+        return {valid:true};
+    }
+
+    if(numberOfGeese === 1 && numberOfCorns === 1){
+        return {valid:true};
     }
 
     if(numberOfGeese === 1 && numberOfCorns === 2){
         return {valid:true};
     }
 
-    if(numberOfGeese >= 1 && numberOfCorns >= 2){
-        return {valid:false};
+    if(numberOfGeese === 2 && numberOfCorns === 1){
+        return {valid:true};
     }
 
-    if(numberOfGeese === 90 && numberOfCorns === 1){
-        return {valid:false};
-    }
-
-    return {valid : true};
+    return {valid : false};
 }
 
 export function calculatorBuilderFor(validator, tripCalculator){

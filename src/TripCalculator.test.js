@@ -1,5 +1,4 @@
 import {calculateCost, calculateTrips, validateRequest, calculatorBuilderFor} from './TripCalculator'
-import Calculator from './components/Calculator';
 
 test('FIXME',() => {
 
@@ -62,6 +61,7 @@ test.each`
 test.each`
   geese | corn
   ${1}  | ${3}
+  ${1}  | ${2}
   ${3}  | ${2}
   ${2}  | ${3}
   ${2}  | ${2}

@@ -1,6 +1,35 @@
 import {calculateCost, calculateTrips, validateRequest, calculatorBuilderFor} from './TripCalculator'
 import Calculator from './components/Calculator';
 
+test('FIXME',() => {
+
+  let callCount = 0;
+  let recordedNumberOfGeese = 0;
+  let recordedBagsOfCorn = 0;
+
+  const validator = {
+    verify : function(expectedGeese, expectedBagsOfCorn, expectedCallCount) {
+      expect(expectedGeese).toBe(recordedNumberOfGeese);
+      expect(expectedBagsOfCorn).toBe(recordedBagsOfCorn);
+      expect(expectedCallCount).toBe(callCount);
+    },
+    instance : function (numberOfGeese, bagsOfCorn){
+      callCount ++;
+      recordedNumberOfGeese = numberOfGeese;
+      recordedBagsOfCorn = bagsOfCorn;
+    }
+  };
+
+  const tripCalculator = () => [];
+  const numberOfGeese = 5;
+  const bagsOfCorn = 10;
+
+  const calculator = calculatorBuilderFor(validator.instance, tripCalculator);
+  calculator(numberOfGeese, bagsOfCorn);
+
+  validator.verify(numberOfGeese, bagsOfCorn, 1);
+});
+
 test.each`
     input | expectedResult
     ${0}  | ${0.00}
@@ -51,31 +80,9 @@ test('Fails validation 3',() => {
   expect(validateRequest(geese,corn).valid).toBe(false);
 });
 
-  test('FIXME',() => {
+test('Fails validation 4',() => {
+  const geese = 1;
+  const corn = 3;
 
-    let callCount = 0;
-    let recordedNumberOfGeese = 0;
-    let recordedBagsOfCorn = 0;
-
-    const validator = {
-      verify : function(expectedGeese, expectedBagsOfCorn, expectedCallCount) {
-          expect(expectedGeese).toBe(recordedNumberOfGeese);
-          expect(expectedBagsOfCorn).toBe(recordedBagsOfCorn);
-          expect(expectedCallCount).toBe(callCount);
-      },
-      instance : function (numberOfGeese, bagsOfCorn){
-        callCount ++;
-        recordedNumberOfGeese = numberOfGeese;
-        recordedBagsOfCorn = bagsOfCorn;
-      }
-    };
-
-    const tripCalculator = () => [];
-    const numberOfGeese = 5;
-    const bagsOfCorn = 10;
-
-    const calculator = calculatorBuilderFor(validator.instance, tripCalculator);
-    calculator(numberOfGeese, bagsOfCorn);
-
-    validator.verify(numberOfGeese, bagsOfCorn, 1);
-  });
+  expect(validateRequest(geese,corn).valid).toBe(false);
+});

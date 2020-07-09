@@ -36,8 +36,9 @@ function App(props) {
       <div>
         Your journey is  {tripValid ? "possible" : "not possible"}
       </div>
+
       <div>
-        Total Cost: {formatter.format(totalCost)}
+        Total Cost: {tripValid ? formatter.format(totalCost) : 0}
       </div>
     </div>
   );

@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/farmer-kalli/static/css/main.5f361e03.chunk.css",
-    "main.js": "/farmer-kalli/static/js/main.f1c3e585.chunk.js",
-    "main.js.map": "/farmer-kalli/static/js/main.f1c3e585.chunk.js.map",
+    "main.js": "/farmer-kalli/static/js/main.ddcf720d.chunk.js",
+    "main.js.map": "/farmer-kalli/static/js/main.ddcf720d.chunk.js.map",
     "runtime-main.js": "/farmer-kalli/static/js/runtime-main.65eeab64.js",
     "runtime-main.js.map": "/farmer-kalli/static/js/runtime-main.65eeab64.js.map",
     "static/js/2.58f4f9b7.chunk.js": "/farmer-kalli/static/js/2.58f4f9b7.chunk.js",
     "static/js/2.58f4f9b7.chunk.js.map": "/farmer-kalli/static/js/2.58f4f9b7.chunk.js.map",
     "index.html": "/farmer-kalli/index.html",
-    "precache-manifest.487551b5aa5f7e34308cdf5c85d6458c.js": "/farmer-kalli/precache-manifest.487551b5aa5f7e34308cdf5c85d6458c.js",
+    "precache-manifest.ce2d3f93cfdfb42b05eb4ea195482354.js": "/farmer-kalli/precache-manifest.ce2d3f93cfdfb42b05eb4ea195482354.js",
     "service-worker.js": "/farmer-kalli/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/farmer-kalli/static/css/main.5f361e03.chunk.css.map",
     "static/js/2.58f4f9b7.chunk.js.LICENSE.txt": "/farmer-kalli/static/js/2.58f4f9b7.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.65eeab64.js",
     "static/js/2.58f4f9b7.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.f1c3e585.chunk.js"
+    "static/js/main.ddcf720d.chunk.js"
   ]
 }

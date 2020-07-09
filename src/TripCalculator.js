@@ -30,3 +30,8 @@ export function calculateTrips(geese, bagsOfCorn){
     
     return result;
 }
+
+export function validateRequest(geese, bagsOfCorn){
+
+    return {valid : true};
+}

@@ -1,4 +1,4 @@
-import {calculateCost, calculateTrips} from './TripCalculator'
+import {calculateCost, calculateTrips, validateRequest} from './TripCalculator'
 
 test.each`
     input | expectedResult
@@ -21,6 +21,12 @@ test.each`
   `('$geese geese + $corn bags of corn has trips $expectedResult', ({ geese, corn, expectedResult }) => {
     expect(calculateTrips(geese, corn)).toEqual(expectedResult);
   })
+
+  test('Passes validation',() => {
+    const geese = 1;
+    const corn = 1;
+    expect(validateRequest(geese,corn).valid).toBe(true);
+  });
 
 //TODO: More than one goose with corn fails
 

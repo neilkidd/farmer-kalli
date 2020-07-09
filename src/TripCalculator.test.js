@@ -52,37 +52,19 @@ test.each`
     expect(calculateTrips(geese, corn)).toEqual(expectedResult);
   })
 
-  test('Passes validation',() => {
-    const geese = 1;
-    const corn = 1;
-
+test.each`
+  geese | corn
+  ${1}  | ${1}
+  `('$geese geese and $corn corn is valid', ({geese, corn}) => {
     expect(validateRequest(geese,corn).valid).toBe(true);
-  });
+  })
 
-  test('Fails validation',() => {
-    const geese = 2;
-    const corn = 2;
-
-    expect(validateRequest(geese,corn).valid).toBe(false);
-  });
-
-  test('Fails validation 2',() => {
-    const geese = 2;
-    const corn = 3;
-
-    expect(validateRequest(geese,corn).valid).toBe(false);
-  });
-
-test('Fails validation 3',() => {
-  const geese = 3;
-  const corn = 2;
-
+test.each`
+  geese | corn
+  ${1}  | ${3}
+  ${3}  | ${2}
+  ${2}  | ${3}
+  ${2}  | ${2}
+  `('$geese geese and $corn corn is not valid', ({geese, corn}) => {
   expect(validateRequest(geese,corn).valid).toBe(false);
-});
-
-test('Fails validation 4',() => {
-  const geese = 1;
-  const corn = 3;
-
-  expect(validateRequest(geese,corn).valid).toBe(false);
-});
+})

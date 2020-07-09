@@ -35,11 +35,7 @@ export function validateRequest(geese, bagsOfCorn){
     const numberOfGeese = parseInt(geese);
     const numberOfCorns = parseInt(bagsOfCorn);
 
-    if(isNaN(numberOfGeese)){
-        return {valid:false};
-    }
-
-    if(isNaN(numberOfCorns)){
+    if(isNaN(numberOfGeese) || isNaN(numberOfCorns)){
         return {valid:false};
     }
 

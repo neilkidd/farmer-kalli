@@ -83,6 +83,7 @@ test.each`
   ${2}  | ${3}
   ${2}  | ${2}
   ${3}  | ${1}
+  ${90} | ${1}
   `('$geese geese and $corn corn is not valid', ({geese, corn}) => {
   expect(validateRequest(geese,corn).valid).toBe(false);
 })

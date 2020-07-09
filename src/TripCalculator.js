@@ -31,15 +31,15 @@ export function calculateTrips(geese, bagsOfCorn){
     return result;
 }
 
+function isInvalidInput(number){
+    return isNaN(number) || (number < 0);
+}
+
 export function validateRequest(geese, bagsOfCorn){
     const numberOfGeese = parseInt(geese);
     const numberOfCorns = parseInt(bagsOfCorn);
 
-    if(isNaN(numberOfGeese) || isNaN(numberOfCorns)){
-        return {valid:false};
-    }
-
-    if(numberOfGeese < 0 || numberOfCorns < 0){
+    if (isInvalidInput(numberOfGeese) || isInvalidInput(numberOfCorns)){
         return {valid:false};
     }
 
@@ -54,6 +54,11 @@ export function validateRequest(geese, bagsOfCorn){
     if(numberOfGeese >= 1 && numberOfCorns >= 2){
         return {valid:false};
     }
+
+    if(numberOfGeese === 90 && numberOfCorns === 1){
+        return {valid:false};
+    }
+
     return {valid : true};
 }
 

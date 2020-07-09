@@ -1,6 +1,6 @@
 import {calculateCost, calculateTrips, validateRequest, calculatorBuilderFor} from './TripCalculator'
 
-test('FIXME',() => {
+test('Mock Experiment',() => {
 
   let callCount = 0;
   let recordedNumberOfGeese = 0;

@@ -33,14 +33,14 @@ test.each`
   test('Fails validation',() => {
     const geese = 2;
     const corn = 2;
-    
+
     expect(validateRequest(geese,corn).valid).toBe(false);
   });
 
   test('Fails validation 2',() => {
     const geese = 2;
     const corn = 3;
-    
+
     expect(validateRequest(geese,corn).valid).toBe(false);
   });
 

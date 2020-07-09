@@ -7,11 +7,11 @@ export function calculateCost(bags){
         return (bags + extraTripsToEndAtMarket) * 0.25;
     }
 
-    return 0; 
+    return 0;
 }
 
 export function calculateTrips(geese, bagsOfCorn){
-    
+
     let result = [];
 
     for(let gooseCount = 0; gooseCount < geese; gooseCount ++){
@@ -27,12 +27,12 @@ export function calculateTrips(geese, bagsOfCorn){
         }
         result.push('Corn');
     }
-    
+
     return result;
 }
 
 export function validateRequest(geese, bagsOfCorn){
-    if(geese === 2 && bagsOfCorn >= 2){
+    if(parseInt(geese) === 2 && parseInt(bagsOfCorn) >= 2){
         return {valid:false};
     }
     return {valid : true};

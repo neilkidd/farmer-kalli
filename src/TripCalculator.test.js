@@ -53,14 +53,28 @@ test.each`
 
 test.each`
   geese | corn
-  ${1}  | ${1}
   ${0}  | ${1}
   ${1}  | ${0}
+  ${1}  | ${1}
   ${0}  | ${10}
   ${1}  | ${2}
+  ${10} | ${0}
   `('$geese geese and $corn corn is valid', ({geese, corn}) => {
     expect(validateRequest(geese,corn).valid).toBe(true);
   })
+
+  test.each`
+  corn  | geese
+  ${0}  | ${1}
+  ${1}  | ${0}
+  ${1}  | ${1}
+  ${1}  | ${2}
+  ${0}  | ${10}
+  ${10} | ${0}
+  `('$geese geese and $corn corn is valid', ({geese, corn}) => {
+    expect(validateRequest(geese,corn).valid).toBe(true);
+  })
+
 
 test.each`
   geese | corn

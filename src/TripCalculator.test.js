@@ -54,6 +54,9 @@ test.each`
 test.each`
   geese | corn
   ${1}  | ${1}
+  ${0}  | ${1}
+  ${1}  | ${0}
+  ${0}  | ${10}
   `('$geese geese and $corn corn is valid', ({geese, corn}) => {
     expect(validateRequest(geese,corn).valid).toBe(true);
   })

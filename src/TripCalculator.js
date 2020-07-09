@@ -39,7 +39,7 @@ export function validateRequest(geese, bagsOfCorn){
 }
 
 export function calculatorBuilderFor(validator, tripCalculator){
-    return () => {
-        return { valid: false}
+    return (numberOfGeese, bagsOfCorn) => {
+        validator(numberOfGeese, bagsOfCorn);
     };
 }

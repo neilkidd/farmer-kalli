@@ -44,13 +44,44 @@ test.each`
     expect(validateRequest(geese,corn).valid).toBe(false);
   });
 
+  // test('Builder produces a validator',() => {
+  //   const validator = () => false;
+  //   const tripCalculator = () => [];
+
+  //   const calculator = calculatorBuilderFor(validator, tripCalculator);
+
+  //   const numberOfGeese = 0;
+  //   const bagsOfCorn = 0;
+
+  //   expect(calculator(numberOfGeese, bagsOfCorn).valid).toBe(false);
+  // });
+
   test('FIXME',() => {
-    const validator = () => false;
+
+    let callCount = 0;
+    let recordedNumberOfGeese = 0;
+    let recordedBagsOfCorn = 0;
+
+    const validator = {
+      verify : function(expectedGeese, expectedBagsOfCorn, expectedCallCount) {
+          expect(expectedGeese).toBe(recordedNumberOfGeese);
+          expect(expectedBagsOfCorn).toBe(recordedBagsOfCorn);
+          expect(expectedCallCount).toBe(callCount);
+      },
+      instance : function (numberOfGeese, bagsOfCorn){
+        callCount ++;
+        recordedNumberOfGeese = numberOfGeese;
+        recordedBagsOfCorn = bagsOfCorn;
+      }
+    };
+
     const tripCalculator = () => [];
+    const numberOfGeese = 5;
+    const bagsOfCorn = 10;
 
-    const calculator = calculatorBuilderFor(validator, tripCalculator);
+    const calculator = calculatorBuilderFor(validator.instance, tripCalculator);
+    console.log(validator);
+    calculator(numberOfGeese, bagsOfCorn);
 
-    const numberOfGeese = 0;
-    const bagsOfCorn = 0;
-    expect(calculator(numberOfGeese, bagsOfCorn).valid).toBe(false);
+    validator.verify(numberOfGeese, bagsOfCorn, 1);
   });

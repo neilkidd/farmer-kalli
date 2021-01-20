@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/farmer-kalli/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/farmer-kalli/static/js/main.62c81023.chunk.js",
-    "main.js.map": "/farmer-kalli/static/js/main.62c81023.chunk.js.map",
+    "main.js": "/farmer-kalli/static/js/main.ec639f85.chunk.js",
+    "main.js.map": "/farmer-kalli/static/js/main.ec639f85.chunk.js.map",
     "runtime-main.js": "/farmer-kalli/static/js/runtime-main.13ef8551.js",
     "runtime-main.js.map": "/farmer-kalli/static/js/runtime-main.13ef8551.js.map",
     "static/js/2.da193355.chunk.js": "/farmer-kalli/static/js/2.da193355.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.13ef8551.js",
     "static/js/2.da193355.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.62c81023.chunk.js"
+    "static/js/main.ec639f85.chunk.js"
   ]
 }
